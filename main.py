@@ -10,7 +10,7 @@ def ready(name, ip, server_port_over, game_version):
             server_port = server_port_over
         # Start the Node.js bot with arguments
         process = subprocess.Popen(
-            ["node", "bot.js", username, server_ip, server_port],
+            ["/home/jetson/.nvm/versions/node/v25.0.0/bin/node", "bot.js", username, server_ip, server_port],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             text=True
