@@ -15,7 +15,15 @@ const bot = mineflayer.createBot({
   auth: 'microsoft' // Use 'mojang' for legacy accounts
 });
 
-bot.on('spawn', () => console.log('Bot has joined the server!'));
+bot.on('spawn', () => {
+  console.log('Bot has joined the server!');
+
+
+  setTimeout(() => {
+    console.log('10 hours reached. Logging out...');
+    bot.quit('Time limit reached');
+  }, 10 * 60 * 60 * 1000);
+});
 bot.on('chat', (username, message) => {
   if (username !== bot.username) bot.chat(`You said: ${message}`);
 });
