@@ -22,7 +22,7 @@ bot.on('spawn', () => {
   setTimeout(() => {
     console.log('10 hours reached. Logging out...');
     bot.quit('Time limit reached');
-  }, 1 * 1 * 60 * 1000);
+  }, 10 * 60 * 60 * 1000);
 });
 bot.on('chat', (username, message) => {
   if (username !== bot.username) bot.chat(`You said: ${message}`);
